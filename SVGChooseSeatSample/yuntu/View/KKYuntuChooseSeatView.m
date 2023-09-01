@@ -162,7 +162,10 @@
     CGSize gridSize = self.drawSeatView.gridSize;
     CGSize gapSize = self.drawSeatView.gapSize;
 
+    UIEdgeInsets contentInset = self.drawSeatView.contentInset;
     CGSize graphSize = CGSizeMake((graphMax.x + 1) * gridSize.width + (graphMax.x - 1) * gapSize.width, (graphMax.y + 1) * gridSize.height + (graphMax.y - 1) * gapSize.height);
+    graphSize.width += contentInset.left + contentInset.right;
+    graphSize.height += contentInset.top + contentInset.bottom;
 
     CGFloat maxCanvasWidth = fmin(1000, graphSize.width);
     CGFloat maxCanvasHeight = (maxCanvasWidth / graphSize.width) * graphSize.height;
@@ -177,7 +180,7 @@
     self.scrollView.minimumZoomScale = minScale;
     self.scrollView.maximumZoomScale = maxScale;
     self.scrollView.zoomScale = minScale;
-    self.scrollView.contentInset = self.drawSeatView.contentInset;
+    //    self.scrollView.contentInset = self.drawSeatView.contentInset;
     [self adjustContentViewCenter];
     [self drawSeatIfNeeded];
     asm("nop");

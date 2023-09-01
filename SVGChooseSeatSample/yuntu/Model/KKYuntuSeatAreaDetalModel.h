@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) KKYuntuSeatGraphPoint graphMin;
 @property (nonatomic, assign) KKYuntuSeatGraphPoint graphMax;
 @property (nonatomic, strong) NSMutableArray<KKYuntuSeatItemModel *> *seats;
+@property (nonatomic, strong) NSMutableDictionary<NSString *, NSNumber *> *status;
 @end
 
 NS_ASSUME_NONNULL_END

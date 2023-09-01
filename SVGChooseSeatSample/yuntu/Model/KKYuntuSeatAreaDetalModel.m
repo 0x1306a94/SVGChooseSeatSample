@@ -13,6 +13,7 @@
         self.graphMin = (KKYuntuSeatGraphPoint){NSIntegerMax, NSIntegerMax};
         self.graphMax = (KKYuntuSeatGraphPoint){NSIntegerMin, NSIntegerMin};
         self.seats = [NSMutableArray<KKYuntuSeatItemModel *> arrayWithCapacity:20];
+        self.status = [NSMutableDictionary<NSString *, NSNumber *> dictionaryWithCapacity:20];
     }
     return self;
 }
