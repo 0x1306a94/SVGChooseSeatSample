@@ -14,9 +14,11 @@
 
 @import SVGKit;
 
+static NSString *const KKSeatLayerGraphIdKey = @"kk_graphId";
+static NSString *const KKSeatLayerUniqueIdentifierKey = @"kk_uniqueIdentifier";
+
 @interface KKYuntuDrawSeatView ()
-@property (nonatomic, strong) NSHashTable<CALayer *> *seatlayers;
-@property (nonatomic, strong) NSMutableSet<CALayer *> *reuseLayerSet;
+@property (nonatomic, strong) NSMapTable<NSNumber *, KKYuntuSeatItemModel *> *seatItemMap;
 @property (nonatomic, strong) NSMapTable<NSNumber *, CALayer *> *seatlayerMap;
 @property (nonatomic, strong) SVGKImage *availableSvgImage;
 @property (nonatomic, strong) SVGKImage *selectedSvgImage;
@@ -49,9 +51,8 @@
     self.gapSize = CGSizeMake(4, 4);
     self.contentInset = UIEdgeInsetsMake(30, 30, 30, 30);
 
-    self.seatlayers = [NSHashTable<CALayer *> weakObjectsHashTable];
-    self.reuseLayerSet = [NSMutableSet<CALayer *> setWithCapacity:20];
-    self.seatlayerMap = [NSMapTable<NSString *, CALayer *> strongToWeakObjectsMapTable];
+    self.seatItemMap = [NSMapTable<NSNumber *, KKYuntuSeatItemModel *> strongToWeakObjectsMapTable];
+    self.seatlayerMap = [NSMapTable<NSNumber *, CALayer *> strongToStrongObjectsMapTable];
 
     NSBundle *svgBundle = [NSBundle kk_SVGResources];
     self.availableSvgImage = [SVGKImage imageNamed:@"icon_chooseSeat_canSelected" inBundle:svgBundle];
@@ -59,6 +60,20 @@
 
     self.selectedSvgImage = [SVGKImage imageNamed:@"icon_chooseSeat_selected" inBundle:svgBundle];
     [self.selectedSvgImage scaleToFitInside:self.gridSize];
+}
+
+- (void)setSeatArea:(KKYuntuSeatAreaDetalModel *)seatArea {
+    if (_seatArea == seatArea) {
+        return;
+    }
+    _seatArea = seatArea;
+
+    NSArray<KKYuntuSeatItemModel *> *seats = self.seatArea.seats;
+    [self.seatItemMap removeAllObjects];
+    for (KKYuntuSeatItemModel *item in seats) {
+        NSInteger graphId = [item graphId];
+        [self.seatItemMap setObject:item forKey:@(graphId)];
+    }
 }
 
 - (void)drawSeatInRect:(CGRect)rect {
@@ -70,6 +85,10 @@
     NSArray<CALayer *> *sublayers = [canvasLayer.sublayers copy];
     for (CALayer *layer in sublayers) {
         if (!CGRectIntersectsRect(rect, layer.frame)) {
+            NSNumber *uniqueIdentifier = [layer valueForKey:KKSeatLayerUniqueIdentifierKey];
+            if (uniqueIdentifier) {
+                [self.seatlayerMap setObject:layer forKey:uniqueIdentifier];
+            }
             [layer removeFromSuperlayer];
         }
     }
@@ -83,6 +102,7 @@
         CGSize gapSize = self.gapSize;
         UIEdgeInsets contentInset = self.contentInset;
         for (KKYuntuSeatItemModel *seat in self.seatArea.seats) {
+            NSInteger graphId = [seat graphId];
             NSInteger uniqueIdentifier = [seat uniqueIdentifier];
             CGRect frame = CGRectZero;
             frame.origin = CGPointMake(contentInset.left + seat.graphcol * gapSize.width + seat.graphcol * gridSize.width,
@@ -91,10 +111,11 @@
             if (CGRectIntersectsRect(rect, frame)) {
                 CALayer *seatLayer = [self.seatlayerMap objectForKey:@(uniqueIdentifier)];
                 if (seatLayer == nil) {
-                    seatLayer = [self.availableSvgImage newCALayerTree];
+                    seatLayer = [seat selected] ? [self.selectedSvgImage newCALayerTree] : [self.availableSvgImage newCALayerTree];
                     [self.seatlayerMap setObject:seatLayer forKey:@(uniqueIdentifier)];
                 }
-                [seatLayer setValue:@(uniqueIdentifier) forKey:@"graphId"];
+                [seatLayer setValue:@(graphId) forKey:KKSeatLayerGraphIdKey];
+                [seatLayer setValue:@(uniqueIdentifier) forKey:KKSeatLayerUniqueIdentifierKey];
                 seatLayer.frame = frame;
                 [canvasLayer addSublayer:seatLayer];
             }
@@ -108,9 +129,8 @@
     if (!self.drawed) {
         return;
     }
-    NSArray<CALayer *> *seatlayers = [self.seatlayers allObjects];
+    NSArray<CALayer *> *seatlayers = [self.layer sublayers];
     [seatlayers makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
-    [self.seatlayers removeAllObjects];
     self.drawed = NO;
 }
 
@@ -119,12 +139,25 @@
     NSArray<CALayer *> *sublayers = [self.layer.sublayers copy];
     for (CALayer *layer in sublayers) {
         if (CGRectContainsPoint(layer.frame, point)) {
-            NSInteger uniqueIdentifier = [[layer valueForKey:@"graphId"] integerValue];
-            NSLog(@"graphId %ld %ld %ld", (uniqueIdentifier & 0xFFFF), ((uniqueIdentifier >> GRAPH_ROW_SHIFT) & 0xFFFF), (uniqueIdentifier & (1UL << GRAPH_SELECT_SHIFT)));
+            NSInteger graphId = [[layer valueForKey:KKSeatLayerGraphIdKey] integerValue];
+            KKYuntuSeatItemModel *seate = [self.seatItemMap objectForKey:@(graphId)];
+            if (seate == nil) {
+                break;
+            }
+            BOOL selected = ![seate selected];
+            [seate updateSelected:selected];
+
+            NSInteger uniqueIdentifier = [seate uniqueIdentifier];
+
+            NSLog(@"graphId %ld %ld", (graphId & GRAPH_COL_MASK), ((graphId & GRAPH_ROW_MASK) >> GRAPH_ROW_SHIFT));
             [layer removeFromSuperlayer];
-            CALayer *newLayer = [self.selectedSvgImage newCALayerTree];
+            CALayer *newLayer = [self.seatlayerMap objectForKey:@(uniqueIdentifier)];
+            if (newLayer == nil) {
+                newLayer = selected ? [self.selectedSvgImage newCALayerTree] : [self.availableSvgImage newCALayerTree];
+            }
             newLayer.frame = layer.frame;
-            [newLayer setValue:@(uniqueIdentifier) forKey:@"graphId"];
+            [newLayer setValue:@(graphId) forKey:KKSeatLayerGraphIdKey];
+            [newLayer setValue:@(uniqueIdentifier) forKey:KKSeatLayerUniqueIdentifierKey];
             [self.seatlayerMap setObject:newLayer forKey:@(uniqueIdentifier)];
             [self.layer addSublayer:newLayer];
             break;

@@ -17,16 +17,12 @@
     return self;
 }
 
-- (NSString *)graphId {
-    return [NSString stringWithFormat:@"graphId-%ld-%ld", self.graphcol, self.graphrow];
+- (NSInteger)graphId {
+    NSInteger col = (self.graphcol & 0xFFFF);
+    NSInteger row = (self.graphrow & 0xFFFF) << GRAPH_ROW_SHIFT;
+    NSInteger value = col | row;
+    return value;
 }
-
-//- (NSInteger)uniqueIdentifier {
-//    NSInteger col = (self.graphcol & 0xFFFF);
-//    NSInteger row = (self.graphrow & 0xFFFF) << GRAPH_ROW_SHIFT;
-//    NSInteger value = col | row | (1UL << GRAPH_SELECT_SHIFT);
-//    return value;
-//}
 
 - (void)setGraphcol:(NSInteger)graphcol {
     _graphcol = graphcol;
@@ -44,5 +40,9 @@
     } else {
         _uniqueIdentifier &= ~(1UL << GRAPH_SELECT_SHIFT);
     }
+}
+
+- (BOOL)selected {
+    return (_uniqueIdentifier & GRAPH_SELECT_MASK) == GRAPH_SELECT_MASK;
 }
 @end

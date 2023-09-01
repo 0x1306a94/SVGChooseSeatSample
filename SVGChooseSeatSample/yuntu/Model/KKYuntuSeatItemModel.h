@@ -10,8 +10,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 #define GRAPH_COL_SHIFT 0
+#define GRAPH_COL_MASK 0xFFFF
 #define GRAPH_ROW_SHIFT 16
+#define GRAPH_ROW_MASK 0xFFFF0000
 #define GRAPH_SELECT_SHIFT 32
+#define GRAPH_SELECT_MASK 0x100000000
 
 @interface KKYuntuSeatItemModel : NSObject
 /// 区域唯一标识
@@ -22,11 +25,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger seatcol;
 @property (nonatomic, copy) NSString *color;
 
-@property (nonatomic, copy, readonly) NSString *graphId;
+@property (nonatomic, assign, readonly) NSInteger graphId;
 
 @property (nonatomic, assign, readonly) NSInteger uniqueIdentifier;
 
 - (void)updateSelected:(BOOL)selected;
+
+- (BOOL)selected;
 @end
 
 NS_ASSUME_NONNULL_END
