@@ -81,6 +81,8 @@ static NSString *const KKSeatLayerUniqueIdentifierKey = @"kk_uniqueIdentifier";
     //        return;
     //    }
 
+//    CGPoint canvasCenter = CGPointMake(CGRectGetWidth(self.bounds) * 0.5, CGRectGetHeight(self.bounds) * 0.05);
+
     CALayer *canvasLayer = self.layer;
     NSArray<CALayer *> *sublayers = [canvasLayer.sublayers copy];
     for (CALayer *layer in sublayers) {
@@ -114,9 +116,13 @@ static NSString *const KKSeatLayerUniqueIdentifierKey = @"kk_uniqueIdentifier";
                     seatLayer = [seat selected] ? [self.selectedSvgImage newCALayerTree] : [self.availableSvgImage newCALayerTree];
                     [self.seatlayerMap setObject:seatLayer forKey:@(uniqueIdentifier)];
                 }
+                CGPoint seatCenter = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame));
+
+//                CGFloat theta = atan2(canvasCenter.y - seatCenter.y, canvasCenter.x - seatCenter.x) + M_PI_2;
                 [seatLayer setValue:@(graphId) forKey:KKSeatLayerGraphIdKey];
                 [seatLayer setValue:@(uniqueIdentifier) forKey:KKSeatLayerUniqueIdentifierKey];
                 seatLayer.frame = frame;
+//                seatLayer.transform = CATransform3DMakeRotation(theta, 0, 0, 1);
                 [canvasLayer addSublayer:seatLayer];
             }
         }
