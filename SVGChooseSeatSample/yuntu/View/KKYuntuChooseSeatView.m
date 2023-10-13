@@ -14,7 +14,7 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) KKYuntuDrawSeatView *drawSeatView;
-
+@property (nonatomic, strong) UIImageView *seatBitmapView;
 @property (nonatomic, strong) KKYuntuSeatAreaDetalModel *seatArea;
 @end
 
@@ -56,8 +56,14 @@
     self.drawSeatView = drawSeatView;
     drawSeatView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
+    UIImageView *seatBitmapView = [[UIImageView alloc] initWithFrame:contentView.bounds];
+    seatBitmapView.backgroundColor = UIColor.clearColor;
+    self.seatBitmapView = seatBitmapView;
+    seatBitmapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+
     [self addSubview:scrollView];
     [scrollView addSubview:contentView];
+    [contentView addSubview:seatBitmapView];
     [contentView addSubview:drawSeatView];
 }
 
@@ -181,10 +187,24 @@
     self.scrollView.minimumZoomScale = minScale;
     self.scrollView.maximumZoomScale = maxScale;
 
+#if 1
     self.scrollView.zoomScale = minScale;
-    //    self.scrollView.contentInset = self.drawSeatView.contentInset;
     [self adjustContentViewCenter];
     [self drawSeatIfNeeded];
+#else
+    self.scrollView.zoomScale = 1.0;
+    [self adjustContentViewCenter];
+    [self.drawSeatView drawSeatInRect:self.contentView.bounds];
+
+    UIGraphicsImageRendererFormat *format = [UIGraphicsImageRendererFormat preferredFormat];
+    UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:CGSizeMake(maxCanvasWidth, maxCanvasHeight) format:format];
+
+    UIImage *image = [renderer imageWithActions:^(UIGraphicsImageRendererContext *_Nonnull rendererContext) {
+        [self.contentView.layer renderInContext:rendererContext.CGContext];
+    }];
+    self.seatBitmapView.image = image;
+    [self.drawSeatView clearSeat];
+#endif
     asm("nop");
 }
 @end

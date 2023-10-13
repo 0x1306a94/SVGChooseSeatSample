@@ -119,7 +119,7 @@ static NSString *const KKSeatLayerUniqueIdentifierKey = @"kk_uniqueIdentifier";
         }
     }
 
-    NSArray<KKYuntuSeatItemModel *> *seats = self.seatArea.seats;
+    NSArray<KKYuntuSeatItemModel *> *seats = [self.seatArea.seats copy];
     do {
         if (seats.count == 0) {
             break;
@@ -160,7 +160,7 @@ static NSString *const KKSeatLayerUniqueIdentifierKey = @"kk_uniqueIdentifier";
     if (!self.drawed) {
         return;
     }
-    NSArray<CALayer *> *seatlayers = [self.layer sublayers];
+    NSArray<CALayer *> *seatlayers = [[self.layer sublayers] copy];
     [seatlayers makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
     [self.seatlayerMap removeAllObjects];
     self.drawed = NO;
@@ -168,6 +168,7 @@ static NSString *const KKSeatLayerUniqueIdentifierKey = @"kk_uniqueIdentifier";
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     CGPoint point = [[touches anyObject] locationInView:self];
+#if 1
     NSArray<CALayer *> *sublayers = [self.layer.sublayers copy];
     for (CALayer *layer in sublayers) {
         if (CGRectContainsPoint(layer.frame, point)) {
@@ -196,6 +197,51 @@ static NSString *const KKSeatLayerUniqueIdentifierKey = @"kk_uniqueIdentifier";
             break;
         }
     }
+#else
+
+    CALayer *canvasLayer = self.layer;
+    NSArray<KKYuntuSeatItemModel *> *seats = [self.seatArea.seats copy];
+    do {
+        if (seats.count == 0) {
+            break;
+        }
+        CGFloat drawScale = self.drawScale;
+        CGAffineTransform transform = CGAffineTransformMakeScale(drawScale, drawScale);
+        CGSize gridSize = CGSizeApplyAffineTransform(self.gridSize, transform);
+        CGSize gapSize = CGSizeApplyAffineTransform(self.gapSize, transform);
+        UIEdgeInsets contentInset = self.contentInset;
+        for (KKYuntuSeatItemModel *seat in self.seatArea.seats) {
+            NSInteger graphId = [seat graphId];
+            CGRect frame = CGRectZero;
+            frame.origin = CGPointMake(contentInset.left * drawScale + seat.graphCol * gapSize.width + seat.graphCol * gridSize.width,
+                                       contentInset.top * drawScale + seat.graphRow * gapSize.height + seat.graphRow * gridSize.height);
+            frame.size = gridSize;
+            if (CGRectContainsPoint(frame, point)) {
+
+                BOOL selected = ![seat selected];
+                [seat updateSelected:selected];
+                NSInteger uniqueIdentifier = [seat uniqueIdentifier];
+
+                CALayer *seatLayer = [self.seatlayerMap objectForKey:@(uniqueIdentifier)];
+                if (seatLayer == nil) {
+                    [seatLayer removeFromSuperlayer];
+                    [self.seatlayerMap removeObjectForKey:@(uniqueIdentifier)];
+
+                    SVGKImage *svgImage = [seat selected] ? self.selectedSvgImage : self.svgImageCache[@(seat.status)];
+                    seatLayer = [svgImage newCALayerTree];
+                    [self.seatlayerMap setObject:seatLayer forKey:@(uniqueIdentifier)];
+                }
+
+                [seatLayer setValue:@(graphId) forKey:KKSeatLayerGraphIdKey];
+                [seatLayer setValue:@(uniqueIdentifier) forKey:KKSeatLayerUniqueIdentifierKey];
+                seatLayer.frame = frame;
+                [canvasLayer addSublayer:seatLayer];
+                break;
+            } else {
+            }
+        }
+    } while (0);
+#endif
 }
 
 #pragma mark - setter
