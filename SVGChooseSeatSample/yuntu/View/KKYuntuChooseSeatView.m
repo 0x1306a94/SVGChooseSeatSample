@@ -175,10 +175,12 @@
     CGFloat minScale = viewSize.width / maxCanvasWidth;
     CGFloat maxScale = graphSize.width / maxCanvasWidth + 1.5;
 
+    self.drawSeatView.drawScale = maxCanvasWidth / graphSize.width;
     self.scrollView.contentSize = CGSizeMake(maxCanvasWidth, maxCanvasHeight);
     self.contentView.bounds = (CGRect){CGPointZero, CGSizeMake(maxCanvasWidth, maxCanvasHeight)};
     self.scrollView.minimumZoomScale = minScale;
     self.scrollView.maximumZoomScale = maxScale;
+
     self.scrollView.zoomScale = minScale;
     //    self.scrollView.contentInset = self.drawSeatView.contentInset;
     [self adjustContentViewCenter];

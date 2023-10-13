@@ -18,20 +18,20 @@
 }
 
 - (NSInteger)graphId {
-    NSInteger col = (self.graphcol & 0xFFFF);
-    NSInteger row = (self.graphrow & 0xFFFF) << GRAPH_ROW_SHIFT;
+    NSInteger col = (self.graphCol & 0xFFFF);
+    NSInteger row = (self.graphRow & 0xFFFF) << GRAPH_ROW_SHIFT;
     NSInteger value = col | row;
     return value;
 }
 
-- (void)setGraphcol:(NSInteger)graphcol {
-    _graphcol = graphcol;
-    _uniqueIdentifier |= (graphcol & 0xFFFF);
+- (void)setGraphCol:(NSInteger)graphCol {
+    _graphCol = graphCol;
+    _uniqueIdentifier |= (graphCol & 0xFFFF);
 }
 
-- (void)setGraphrow:(NSInteger)graphrow {
-    _graphrow = graphrow;
-    _uniqueIdentifier |= ((graphrow & 0xFFFF) << GRAPH_ROW_SHIFT);
+- (void)setGraphRow:(NSInteger)graphRow {
+    _graphRow = graphRow;
+    _uniqueIdentifier |= ((graphRow & 0xFFFF) << GRAPH_ROW_SHIFT);
 }
 
 - (void)updateSelected:(BOOL)selected {

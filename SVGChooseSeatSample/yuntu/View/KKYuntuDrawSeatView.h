@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGSize gridSize;
 @property (nonatomic, assign) CGSize gapSize;
 @property (nonatomic, assign) UIEdgeInsets contentInset;
+@property (nonatomic, assign) CGFloat drawScale;
 
 @property (nonatomic, strong) KKYuntuSeatAreaDetalModel *seatArea;
 - (void)drawSeatInRect:(CGRect)rect;

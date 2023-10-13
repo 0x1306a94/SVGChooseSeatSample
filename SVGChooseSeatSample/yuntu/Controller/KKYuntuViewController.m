@@ -73,7 +73,7 @@
 
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSData *areaData = [NSData dataWithContentsOfFile:[NSBundle.mainBundle pathForResource:@"data" ofType:@"json"]];
-        NSData *seatData = [NSData dataWithContentsOfFile:[NSBundle.mainBundle pathForResource:@"seat" ofType:@"json"]];
+        NSData *seatData = [NSData dataWithContentsOfFile:[NSBundle.mainBundle pathForResource:@"large_seat" ofType:@"json"]];
         NSDictionary *areaDict = [NSJSONSerialization JSONObjectWithData:areaData options:NSJSONReadingAllowFragments error:nil];
         NSDictionary *seatDict = [NSJSONSerialization JSONObjectWithData:seatData options:NSJSONReadingAllowFragments error:nil];
         NSArray<KKYuntuSeatAreaModel *> *areas = @[];

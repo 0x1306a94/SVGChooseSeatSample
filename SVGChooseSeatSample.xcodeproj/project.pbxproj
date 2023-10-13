@@ -30,6 +30,9 @@
 		3CB9F8932A9F402B0003DFEB /* KKYuntuSeatAreaDetalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB9F8922A9F402B0003DFEB /* KKYuntuSeatAreaDetalModel.m */; };
 		3CC350B12AA07812007B5693 /* yuntu_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CC350B02AA07812007B5693 /* yuntu_bg.jpg */; };
 		3CC350B42AA07950007B5693 /* KKYuntuSeatAreaRainbowGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC350B32AA07950007B5693 /* KKYuntuSeatAreaRainbowGenerator.m */; };
+		3CDB2F292AD8FFF700B5156C /* large_seat.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CDB2F282AD8FFF700B5156C /* large_seat.json */; };
+		3CDB2F2C2AD90E2400B5156C /* SVGKImage+ChangeStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDB2F2B2AD90E2400B5156C /* SVGKImage+ChangeStyle.m */; };
+		3CDB2FFD2AD9171A00B5156C /* UIColor+KKHexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDB2FFC2AD9171A00B5156C /* UIColor+KKHexString.m */; };
 		3CE395AA2A9DC18800B1FCAA /* SVGResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3CE395A92A9DC18800B1FCAA /* SVGResources.bundle */; };
 		3CE395AD2A9DC1E300B1FCAA /* NSBundle+SVGResources.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE395AC2A9DC1E300B1FCAA /* NSBundle+SVGResources.m */; };
 		3CE6FC7D2AA0246A0003106C /* KKYuntuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE6FC7C2AA0246A0003106C /* KKYuntuViewController.m */; };
@@ -95,6 +98,11 @@
 		3CC350B02AA07812007B5693 /* yuntu_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yuntu_bg.jpg; sourceTree = "<group>"; };
 		3CC350B22AA07950007B5693 /* KKYuntuSeatAreaRainbowGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKYuntuSeatAreaRainbowGenerator.h; sourceTree = "<group>"; };
 		3CC350B32AA07950007B5693 /* KKYuntuSeatAreaRainbowGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKYuntuSeatAreaRainbowGenerator.m; sourceTree = "<group>"; };
+		3CDB2F282AD8FFF700B5156C /* large_seat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = large_seat.json; sourceTree = "<group>"; };
+		3CDB2F2A2AD90E2400B5156C /* SVGKImage+ChangeStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SVGKImage+ChangeStyle.h"; sourceTree = "<group>"; };
+		3CDB2F2B2AD90E2400B5156C /* SVGKImage+ChangeStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SVGKImage+ChangeStyle.m"; sourceTree = "<group>"; };
+		3CDB2FFB2AD9171A00B5156C /* UIColor+KKHexString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+KKHexString.h"; sourceTree = "<group>"; };
+		3CDB2FFC2AD9171A00B5156C /* UIColor+KKHexString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+KKHexString.m"; sourceTree = "<group>"; };
 		3CE395A92A9DC18800B1FCAA /* SVGResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVGResources.bundle; sourceTree = "<group>"; };
 		3CE395AB2A9DC1E300B1FCAA /* NSBundle+SVGResources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+SVGResources.h"; sourceTree = "<group>"; };
 		3CE395AC2A9DC1E300B1FCAA /* NSBundle+SVGResources.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+SVGResources.m"; sourceTree = "<group>"; };
@@ -193,6 +201,10 @@
 				3C6C1EBD2A9C89F9008621B6 /* main.m */,
 				3CE395AB2A9DC1E300B1FCAA /* NSBundle+SVGResources.h */,
 				3CE395AC2A9DC1E300B1FCAA /* NSBundle+SVGResources.m */,
+				3CDB2F2A2AD90E2400B5156C /* SVGKImage+ChangeStyle.h */,
+				3CDB2F2B2AD90E2400B5156C /* SVGKImage+ChangeStyle.m */,
+				3CDB2FFB2AD9171A00B5156C /* UIColor+KKHexString.h */,
+				3CDB2FFC2AD9171A00B5156C /* UIColor+KKHexString.m */,
 			);
 			path = SVGChooseSeatSample;
 			sourceTree = "<group>";
@@ -253,6 +265,7 @@
 				3CC350B02AA07812007B5693 /* yuntu_bg.jpg */,
 				3CB9F87C2A9F39B60003DFEB /* seat.json */,
 				3CB9F87E2A9F39C00003DFEB /* data.json */,
+				3CDB2F282AD8FFF700B5156C /* large_seat.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -443,6 +456,7 @@
 				3C6C1EB82A9C89F9008621B6 /* Assets.xcassets in Resources */,
 				3CE395AA2A9DC18800B1FCAA /* SVGResources.bundle in Resources */,
 				3CC350B12AA07812007B5693 /* yuntu_bg.jpg in Resources */,
+				3CDB2F292AD8FFF700B5156C /* large_seat.json in Resources */,
 				3C6C1EB62A9C89F8008621B6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,6 +587,8 @@
 			files = (
 				3C6C1EB32A9C89F8008621B6 /* KKSVGViewController.m in Sources */,
 				3CC350B42AA07950007B5693 /* KKYuntuSeatAreaRainbowGenerator.m in Sources */,
+				3CDB2F2C2AD90E2400B5156C /* SVGKImage+ChangeStyle.m in Sources */,
+				3CDB2FFD2AD9171A00B5156C /* UIColor+KKHexString.m in Sources */,
 				3C6C1EE52A9C8AB8008621B6 /* KKSVGChooseSeatView.m in Sources */,
 				3CB9F8932A9F402B0003DFEB /* KKYuntuSeatAreaDetalModel.m in Sources */,
 				3C6C1EAD2A9C89F8008621B6 /* AppDelegate.m in Sources */,

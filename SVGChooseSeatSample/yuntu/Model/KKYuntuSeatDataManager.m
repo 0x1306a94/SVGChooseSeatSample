@@ -35,6 +35,7 @@
 - (void)rebuildSeatData {
 
     for (KKYuntuSeatItemModel *seat in self.seats) {
+        seat.regioncode = @"R1694234878897934338";
         KKYuntuSeatAreaDetalModel *deatl = self.allAreaMap[seat.regioncode];
         if (deatl == nil) {
             deatl = [KKYuntuSeatAreaDetalModel new];
@@ -46,7 +47,7 @@
         KKYuntuSeatGraphPoint graphMin = deatl.graphMin;
         KKYuntuSeatGraphPoint graphMax = deatl.graphMax;
 
-        KKYuntuSeatGraphPoint seatPoint = (KKYuntuSeatGraphPoint){seat.graphcol, seat.graphrow};
+        KKYuntuSeatGraphPoint seatPoint = (KKYuntuSeatGraphPoint){seat.graphCol, seat.graphRow};
         graphMin.x = MIN(graphMin.x, seatPoint.x);
         graphMin.y = MIN(graphMin.y, seatPoint.y);
 

@@ -19,10 +19,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface KKYuntuSeatItemModel : NSObject
 /// 区域唯一标识
 @property (nonatomic, copy) NSString *regioncode;
-@property (nonatomic, assign) NSInteger graphrow;
-@property (nonatomic, assign) NSInteger graphcol;
-@property (nonatomic, assign) NSInteger seatrow;
-@property (nonatomic, assign) NSInteger seatcol;
+@property (nonatomic, assign) NSInteger graphRow;
+@property (nonatomic, assign) NSInteger graphCol;
+@property (nonatomic, assign) NSInteger seatRow;
+@property (nonatomic, assign) NSInteger seatCol;
+@property (nonatomic, assign) NSInteger status;
 @property (nonatomic, copy) NSString *color;
 
 @property (nonatomic, assign, readonly) NSInteger graphId;
