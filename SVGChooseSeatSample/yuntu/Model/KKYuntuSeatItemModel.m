@@ -42,6 +42,10 @@
     }
 }
 
+- (BOOL)canSelected {
+    return self.status == 1;
+}
+
 - (BOOL)selected {
     return (_uniqueIdentifier & GRAPH_SELECT_MASK) == GRAPH_SELECT_MASK;
 }

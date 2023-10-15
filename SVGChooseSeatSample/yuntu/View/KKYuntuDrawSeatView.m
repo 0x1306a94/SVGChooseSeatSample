@@ -7,6 +7,7 @@
 
 #import "KKYuntuDrawSeatView.h"
 
+#import "CALayer+Bitmap.h"
 #import "KKYuntuSeatAreaDetalModel.h"
 #import "KKYuntuSeatGraphGeometry.h"
 #import "KKYuntuSeatItemModel.h"
@@ -19,10 +20,29 @@
 static NSString *const KKSeatLayerGraphIdKey = @"kk_graphId";
 static NSString *const KKSeatLayerUniqueIdentifierKey = @"kk_uniqueIdentifier";
 
+typedef struct {
+    struct {
+        char status : 4;
+        char selected : 1;
+        char reserve : 3;
+    } flag;
+} SeatBitmapKey;
+
+int seat_bitmap_key_value_whit(NSInteger status, BOOL selected) {
+    SeatBitmapKey key;
+    memset(&key, 0, sizeof(SeatBitmapKey));
+    key.flag.status = (char)status;
+    key.flag.selected = selected;
+    int value = 0;
+    memcpy(&value, &key, sizeof(key.flag));
+    return value;
+}
+
 @interface KKYuntuDrawSeatView ()
 @property (nonatomic, strong) NSMapTable<NSNumber *, KKYuntuSeatItemModel *> *seatItemMap;
 @property (nonatomic, strong) NSMapTable<NSNumber *, CALayer *> *seatlayerMap;
 @property (nonatomic, strong) NSMutableDictionary<NSNumber *, SVGKImage *> *svgImageCache;
+@property (nonatomic, strong) NSMutableDictionary<NSNumber *, UIImage *> *svgBitmapCache;
 @property (nonatomic, strong) SVGKImage *selectedSvgImage;
 @property (nonatomic, assign) BOOL drawed;
 @end
@@ -57,6 +77,7 @@ static NSString *const KKSeatLayerUniqueIdentifierKey = @"kk_uniqueIdentifier";
     self.seatItemMap = [NSMapTable<NSNumber *, KKYuntuSeatItemModel *> strongToWeakObjectsMapTable];
     self.seatlayerMap = [NSMapTable<NSNumber *, CALayer *> strongToStrongObjectsMapTable];
     self.svgImageCache = [NSMutableDictionary<NSNumber *, SVGKImage *> dictionaryWithCapacity:10];
+    self.svgBitmapCache = [NSMutableDictionary<NSNumber *, UIImage *> dictionaryWithCapacity:10];
 
     [self updateSvgImage];
 }
@@ -66,28 +87,40 @@ static NSString *const KKSeatLayerUniqueIdentifierKey = @"kk_uniqueIdentifier";
     NSBundle *svgBundle = [NSBundle kk_SVGResources];
 
     [self.svgImageCache removeAllObjects];
+    [self.svgBitmapCache removeAllObjects];
 
     self.selectedSvgImage = [SVGKImage imageNamed:@"icon_chooseSeat_selected" inBundle:svgBundle];
     [self.selectedSvgImage scaleToFitInside:size];
 
     do {
-        SVGKImage *image = [SVGKImage imageNamed:@"icon_chooseSeat_canSelected" inBundle:svgBundle withCacheKey:@"0"];
+        NSNumber *key = @(seat_bitmap_key_value_whit(0, NO));
+        SVGKImage *image = [SVGKImage imageNamed:@"icon_chooseSeat_canSelected" inBundle:svgBundle withCacheKey:key.stringValue];
         [image scaleToFitInside:size];
         [image kk_changeFillColor:@"#ccc" strokeColor:@"#666"];
-        self.svgImageCache[@0] = image;
+        self.svgImageCache[key] = image;
     } while (0);
 
     do {
-        SVGKImage *image = [SVGKImage imageNamed:@"icon_chooseSeat_canSelected" inBundle:svgBundle withCacheKey:@"1"];
+        NSNumber *key = @(seat_bitmap_key_value_whit(1, NO));
+        SVGKImage *image = [SVGKImage imageNamed:@"icon_chooseSeat_canSelected" inBundle:svgBundle withCacheKey:key.stringValue];
         [image scaleToFitInside:size];
-        self.svgImageCache[@1] = image;
+        self.svgImageCache[key] = image;
     } while (0);
 
     do {
-        SVGKImage *image = [SVGKImage imageNamed:@"icon_chooseSeat_canSelected" inBundle:svgBundle withCacheKey:@"2"];
+        NSNumber *key = @(seat_bitmap_key_value_whit(1, YES));
+        SVGKImage *image = [SVGKImage imageNamed:@"icon_chooseSeat_selected" inBundle:svgBundle withCacheKey:key.stringValue];
         [image scaleToFitInside:size];
-        self.svgImageCache[@2] = image;
+        self.svgImageCache[key] = image;
     } while (0);
+
+    do {
+        NSNumber *key = @(seat_bitmap_key_value_whit(2, NO));
+        SVGKImage *image = [SVGKImage imageNamed:@"icon_chooseSeat_canSelected" inBundle:svgBundle withCacheKey:key.stringValue];
+        [image scaleToFitInside:size];
+        self.svgImageCache[key] = image;
+    } while (0);
+
     asm("nop");
 }
 
@@ -124,6 +157,9 @@ static NSString *const KKSeatLayerUniqueIdentifierKey = @"kk_uniqueIdentifier";
         if (seats.count == 0) {
             break;
         }
+        // 避免放大后不清晰
+        CGFloat bitmapScale = UIScreen.mainScreen.scale * 2;
+
         CGFloat drawScale = self.drawScale;
         CGAffineTransform transform = CGAffineTransformMakeScale(drawScale, drawScale);
         CGSize gridSize = CGSizeApplyAffineTransform(self.gridSize, transform);
@@ -139,8 +175,18 @@ static NSString *const KKSeatLayerUniqueIdentifierKey = @"kk_uniqueIdentifier";
             if (CGRectIntersectsRect(rect, frame)) {
                 CALayer *seatLayer = [self.seatlayerMap objectForKey:@(uniqueIdentifier)];
                 if (seatLayer == nil) {
-                    SVGKImage *svgImage = [seat selected] ? self.selectedSvgImage : self.svgImageCache[@(seat.status)];
-                    seatLayer = [svgImage newCALayerTree];
+                    NSNumber *key = @(seat_bitmap_key_value_whit(seat.status, [seat selected]));
+                    UIImage *image = self.svgBitmapCache[key];
+                    if (!image) {
+                        SVGKImage *svgImage = self.svgImageCache[key];
+                        __kindof CALayer *svgLayer = [svgImage newCALayerTree];
+                        svgLayer.frame = frame;
+                        image = [svgLayer kk_toImage:bitmapScale];
+                        self.svgBitmapCache[key] = image;
+                    }
+
+                    seatLayer = [CALayer layer];
+                    seatLayer.contents = (id)image.CGImage;
                     [self.seatlayerMap setObject:seatLayer forKey:@(uniqueIdentifier)];
                 }
 
@@ -177,6 +223,9 @@ static NSString *const KKSeatLayerUniqueIdentifierKey = @"kk_uniqueIdentifier";
             if (seat == nil) {
                 break;
             }
+            if (![seat canSelected]) {
+                break;
+            }
             BOOL selected = ![seat selected];
             [seat updateSelected:selected];
 
@@ -186,8 +235,18 @@ static NSString *const KKSeatLayerUniqueIdentifierKey = @"kk_uniqueIdentifier";
             [layer removeFromSuperlayer];
             CALayer *newLayer = [self.seatlayerMap objectForKey:@(uniqueIdentifier)];
             if (newLayer == nil) {
-                SVGKImage *svgImage = selected ? self.selectedSvgImage : self.svgImageCache[@(seat.status)];
-                newLayer = [svgImage newCALayerTree];
+                NSNumber *key = @(seat_bitmap_key_value_whit(seat.status, [seat selected]));
+                UIImage *image = self.svgBitmapCache[key];
+                if (!image) {
+                    SVGKImage *svgImage = self.svgImageCache[key];
+                    __kindof CALayer *svgLayer = [svgImage newCALayerTree];
+                    svgLayer.frame = layer.frame;
+                    CGFloat bitmapScale = UIScreen.mainScreen.scale * 2;
+                    image = [svgLayer kk_toImage:bitmapScale];
+                    self.svgBitmapCache[key] = image;
+                }
+                newLayer = [CALayer layer];
+                newLayer.contents = (id)image.CGImage;
             }
             newLayer.frame = layer.frame;
             [newLayer setValue:@(graphId) forKey:KKSeatLayerGraphIdKey];

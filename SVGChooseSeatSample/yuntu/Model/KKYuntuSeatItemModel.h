@@ -32,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)updateSelected:(BOOL)selected;
 
+- (BOOL)canSelected;
 - (BOOL)selected;
 @end
 

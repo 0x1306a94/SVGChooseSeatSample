@@ -179,7 +179,7 @@
     CGSize viewSize = self.bounds.size;
 
     CGFloat minScale = viewSize.width / maxCanvasWidth;
-    CGFloat maxScale = graphSize.width / maxCanvasWidth + 1.5;
+    CGFloat maxScale = graphSize.width / maxCanvasWidth;// + 1.5;
 
     self.drawSeatView.drawScale = maxCanvasWidth / graphSize.width;
     self.scrollView.contentSize = CGSizeMake(maxCanvasWidth, maxCanvasHeight);
