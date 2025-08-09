@@ -1,0 +1,1029 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03D04932B7579BAE8C8BAB36 /* Pods_SVGChooseSeatSample_SVGChooseSeatSampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05810F4507170A2204E6F7CE /* Pods_SVGChooseSeatSample_SVGChooseSeatSampleUITests.framework */; };
+		3774A9772F5B5F70E061144C /* Pods_SVGChooseSeatSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB8E6834B09BE024F230749 /* Pods_SVGChooseSeatSample.framework */; };
+		3C6C1EAD2A9C89F8008621B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C1EAC2A9C89F8008621B6 /* AppDelegate.m */; };
+		3C6C1EB02A9C89F8008621B6 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C1EAF2A9C89F8008621B6 /* SceneDelegate.m */; };
+		3C6C1EB32A9C89F8008621B6 /* KKSVGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C1EB22A9C89F8008621B6 /* KKSVGViewController.m */; };
+		3C6C1EB62A9C89F8008621B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6C1EB42A9C89F8008621B6 /* Main.storyboard */; };
+		3C6C1EB82A9C89F9008621B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C6C1EB72A9C89F9008621B6 /* Assets.xcassets */; };
+		3C6C1EBB2A9C89F9008621B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C6C1EB92A9C89F9008621B6 /* LaunchScreen.storyboard */; };
+		3C6C1EBE2A9C89F9008621B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C1EBD2A9C89F9008621B6 /* main.m */; };
+		3C6C1EC82A9C89F9008621B6 /* SVGChooseSeatSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C1EC72A9C89F9008621B6 /* SVGChooseSeatSampleTests.m */; };
+		3C6C1ED22A9C89F9008621B6 /* SVGChooseSeatSampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C1ED12A9C89F9008621B6 /* SVGChooseSeatSampleUITests.m */; };
+		3C6C1ED42A9C89F9008621B6 /* SVGChooseSeatSampleUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C1ED32A9C89F9008621B6 /* SVGChooseSeatSampleUITestsLaunchTests.m */; };
+		3C6C1EE22A9C8A9C008621B6 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3C6C1EE12A9C8A9C008621B6 /* SVGKit */; };
+		3C6C1EE52A9C8AB8008621B6 /* KKSVGChooseSeatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C1EE42A9C8AB8008621B6 /* KKSVGChooseSeatView.m */; };
+		3C6C1EE82A9C8C56008621B6 /* KKSVGDrawSeatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6C1EE72A9C8C56008621B6 /* KKSVGDrawSeatView.m */; };
+		3C6C1F272A9C90CC008621B6 /* LookinServer in Frameworks */ = {isa = PBXBuildFile; productRef = 3C6C1F262A9C90CC008621B6 /* LookinServer */; };
+		3C8D2EEF2ADB6C03007F6793 /* CALayer+Bitmap.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8D2EEE2ADB6C03007F6793 /* CALayer+Bitmap.m */; };
+		3CB9F87D2A9F39B60003DFEB /* seat.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CB9F87C2A9F39B60003DFEB /* seat.json */; };
+		3CB9F87F2A9F39C00003DFEB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CB9F87E2A9F39C00003DFEB /* data.json */; };
+		3CB9F8842A9F3DA00003DFEB /* KKYuntuChooseSeatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB9F8832A9F3DA00003DFEB /* KKYuntuChooseSeatView.m */; };
+		3CB9F88A2A9F3DFE0003DFEB /* KKYuntuSeatAreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB9F8892A9F3DFE0003DFEB /* KKYuntuSeatAreaModel.m */; };
+		3CB9F88D2A9F3E1E0003DFEB /* KKYuntuSeatItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB9F88C2A9F3E1E0003DFEB /* KKYuntuSeatItemModel.m */; };
+		3CB9F8902A9F3EEC0003DFEB /* KKYuntuSeatDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB9F88F2A9F3EEC0003DFEB /* KKYuntuSeatDataManager.m */; };
+		3CB9F8932A9F402B0003DFEB /* KKYuntuSeatAreaDetalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB9F8922A9F402B0003DFEB /* KKYuntuSeatAreaDetalModel.m */; };
+		3CC350B12AA07812007B5693 /* yuntu_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CC350B02AA07812007B5693 /* yuntu_bg.jpg */; };
+		3CC350B42AA07950007B5693 /* KKYuntuSeatAreaRainbowGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC350B32AA07950007B5693 /* KKYuntuSeatAreaRainbowGenerator.m */; };
+		3CDB2F292AD8FFF700B5156C /* large_seat.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CDB2F282AD8FFF700B5156C /* large_seat.json */; };
+		3CDB2F2C2AD90E2400B5156C /* SVGKImage+ChangeStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDB2F2B2AD90E2400B5156C /* SVGKImage+ChangeStyle.m */; };
+		3CDB2FFD2AD9171A00B5156C /* UIColor+KKHexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDB2FFC2AD9171A00B5156C /* UIColor+KKHexString.m */; };
+		3CE395AA2A9DC18800B1FCAA /* SVGResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3CE395A92A9DC18800B1FCAA /* SVGResources.bundle */; };
+		3CE395AD2A9DC1E300B1FCAA /* NSBundle+SVGResources.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE395AC2A9DC1E300B1FCAA /* NSBundle+SVGResources.m */; };
+		3CE6FC7D2AA0246A0003106C /* KKYuntuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE6FC7C2AA0246A0003106C /* KKYuntuViewController.m */; };
+		3CE6FC802AA0261C0003106C /* KKYuntuDrawSeatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CE6FC7F2AA0261C0003106C /* KKYuntuDrawSeatView.m */; };
+		B4FFD9C73A8D02CE3B1251EC /* Pods_SVGChooseSeatSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE260D41680975EF74C1169F /* Pods_SVGChooseSeatSampleTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3C6C1EC42A9C89F9008621B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C6C1EA02A9C89F8008621B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C6C1EA72A9C89F8008621B6;
+			remoteInfo = SVGChooseSeatSample;
+		};
+		3C6C1ECE2A9C89F9008621B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C6C1EA02A9C89F8008621B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C6C1EA72A9C89F8008621B6;
+			remoteInfo = SVGChooseSeatSample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05810F4507170A2204E6F7CE /* Pods_SVGChooseSeatSample_SVGChooseSeatSampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SVGChooseSeatSample_SVGChooseSeatSampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		326ADAC3483B3A5046BEA48B /* Pods-SVGChooseSeatSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SVGChooseSeatSample.debug.xcconfig"; path = "Target Support Files/Pods-SVGChooseSeatSample/Pods-SVGChooseSeatSample.debug.xcconfig"; sourceTree = "<group>"; };
+		3C6C1EA82A9C89F8008621B6 /* SVGChooseSeatSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SVGChooseSeatSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C6C1EAB2A9C89F8008621B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3C6C1EAC2A9C89F8008621B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3C6C1EAE2A9C89F8008621B6 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		3C6C1EAF2A9C89F8008621B6 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		3C6C1EB12A9C89F8008621B6 /* KKSVGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKSVGViewController.h; sourceTree = "<group>"; };
+		3C6C1EB22A9C89F8008621B6 /* KKSVGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSVGViewController.m; sourceTree = "<group>"; };
+		3C6C1EB52A9C89F8008621B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3C6C1EB72A9C89F9008621B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3C6C1EBA2A9C89F9008621B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3C6C1EBC2A9C89F9008621B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C6C1EBD2A9C89F9008621B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3C6C1EC32A9C89F9008621B6 /* SVGChooseSeatSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SVGChooseSeatSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C6C1EC72A9C89F9008621B6 /* SVGChooseSeatSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVGChooseSeatSampleTests.m; sourceTree = "<group>"; };
+		3C6C1ECD2A9C89F9008621B6 /* SVGChooseSeatSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SVGChooseSeatSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C6C1ED12A9C89F9008621B6 /* SVGChooseSeatSampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVGChooseSeatSampleUITests.m; sourceTree = "<group>"; };
+		3C6C1ED32A9C89F9008621B6 /* SVGChooseSeatSampleUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVGChooseSeatSampleUITestsLaunchTests.m; sourceTree = "<group>"; };
+		3C6C1EE32A9C8AB8008621B6 /* KKSVGChooseSeatView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKSVGChooseSeatView.h; sourceTree = "<group>"; };
+		3C6C1EE42A9C8AB8008621B6 /* KKSVGChooseSeatView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSVGChooseSeatView.m; sourceTree = "<group>"; };
+		3C6C1EE62A9C8C56008621B6 /* KKSVGDrawSeatView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKSVGDrawSeatView.h; sourceTree = "<group>"; };
+		3C6C1EE72A9C8C56008621B6 /* KKSVGDrawSeatView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSVGDrawSeatView.m; sourceTree = "<group>"; };
+		3C8D2EED2ADB6C03007F6793 /* CALayer+Bitmap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+Bitmap.h"; sourceTree = "<group>"; };
+		3C8D2EEE2ADB6C03007F6793 /* CALayer+Bitmap.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Bitmap.m"; sourceTree = "<group>"; };
+		3CB9F87C2A9F39B60003DFEB /* seat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seat.json; sourceTree = "<group>"; };
+		3CB9F87E2A9F39C00003DFEB /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		3CB9F8822A9F3DA00003DFEB /* KKYuntuChooseSeatView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKYuntuChooseSeatView.h; sourceTree = "<group>"; };
+		3CB9F8832A9F3DA00003DFEB /* KKYuntuChooseSeatView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKYuntuChooseSeatView.m; sourceTree = "<group>"; };
+		3CB9F8882A9F3DFE0003DFEB /* KKYuntuSeatAreaModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKYuntuSeatAreaModel.h; sourceTree = "<group>"; };
+		3CB9F8892A9F3DFE0003DFEB /* KKYuntuSeatAreaModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKYuntuSeatAreaModel.m; sourceTree = "<group>"; };
+		3CB9F88B2A9F3E1E0003DFEB /* KKYuntuSeatItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKYuntuSeatItemModel.h; sourceTree = "<group>"; };
+		3CB9F88C2A9F3E1E0003DFEB /* KKYuntuSeatItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKYuntuSeatItemModel.m; sourceTree = "<group>"; };
+		3CB9F88E2A9F3EEC0003DFEB /* KKYuntuSeatDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKYuntuSeatDataManager.h; sourceTree = "<group>"; };
+		3CB9F88F2A9F3EEC0003DFEB /* KKYuntuSeatDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKYuntuSeatDataManager.m; sourceTree = "<group>"; };
+		3CB9F8912A9F402B0003DFEB /* KKYuntuSeatAreaDetalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKYuntuSeatAreaDetalModel.h; sourceTree = "<group>"; };
+		3CB9F8922A9F402B0003DFEB /* KKYuntuSeatAreaDetalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKYuntuSeatAreaDetalModel.m; sourceTree = "<group>"; };
+		3CB9F8942A9F40B60003DFEB /* KKYuntuSeatGraphGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKYuntuSeatGraphGeometry.h; sourceTree = "<group>"; };
+		3CC350B02AA07812007B5693 /* yuntu_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yuntu_bg.jpg; sourceTree = "<group>"; };
+		3CC350B22AA07950007B5693 /* KKYuntuSeatAreaRainbowGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKYuntuSeatAreaRainbowGenerator.h; sourceTree = "<group>"; };
+		3CC350B32AA07950007B5693 /* KKYuntuSeatAreaRainbowGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKYuntuSeatAreaRainbowGenerator.m; sourceTree = "<group>"; };
+		3CDB2F282AD8FFF700B5156C /* large_seat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = large_seat.json; sourceTree = "<group>"; };
+		3CDB2F2A2AD90E2400B5156C /* SVGKImage+ChangeStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SVGKImage+ChangeStyle.h"; sourceTree = "<group>"; };
+		3CDB2F2B2AD90E2400B5156C /* SVGKImage+ChangeStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SVGKImage+ChangeStyle.m"; sourceTree = "<group>"; };
+		3CDB2FFB2AD9171A00B5156C /* UIColor+KKHexString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+KKHexString.h"; sourceTree = "<group>"; };
+		3CDB2FFC2AD9171A00B5156C /* UIColor+KKHexString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+KKHexString.m"; sourceTree = "<group>"; };
+		3CE395A92A9DC18800B1FCAA /* SVGResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVGResources.bundle; sourceTree = "<group>"; };
+		3CE395AB2A9DC1E300B1FCAA /* NSBundle+SVGResources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+SVGResources.h"; sourceTree = "<group>"; };
+		3CE395AC2A9DC1E300B1FCAA /* NSBundle+SVGResources.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+SVGResources.m"; sourceTree = "<group>"; };
+		3CE6FC7B2AA0246A0003106C /* KKYuntuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKYuntuViewController.h; sourceTree = "<group>"; };
+		3CE6FC7C2AA0246A0003106C /* KKYuntuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKYuntuViewController.m; sourceTree = "<group>"; };
+		3CE6FC7E2AA0261C0003106C /* KKYuntuDrawSeatView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKYuntuDrawSeatView.h; sourceTree = "<group>"; };
+		3CE6FC7F2AA0261C0003106C /* KKYuntuDrawSeatView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKYuntuDrawSeatView.m; sourceTree = "<group>"; };
+		486C7BD2BA4235761B27578F /* Pods-SVGChooseSeatSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SVGChooseSeatSample.release.xcconfig"; path = "Target Support Files/Pods-SVGChooseSeatSample/Pods-SVGChooseSeatSample.release.xcconfig"; sourceTree = "<group>"; };
+		5AD6F57DD29F7F87AA28A4C4 /* Pods-SVGChooseSeatSample-SVGChooseSeatSampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SVGChooseSeatSample-SVGChooseSeatSampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-SVGChooseSeatSample-SVGChooseSeatSampleUITests/Pods-SVGChooseSeatSample-SVGChooseSeatSampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7FB8E6834B09BE024F230749 /* Pods_SVGChooseSeatSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SVGChooseSeatSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90F4B734422BCC32DC3DC46 /* Pods-SVGChooseSeatSample-SVGChooseSeatSampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SVGChooseSeatSample-SVGChooseSeatSampleUITests.release.xcconfig"; path = "Target Support Files/Pods-SVGChooseSeatSample-SVGChooseSeatSampleUITests/Pods-SVGChooseSeatSample-SVGChooseSeatSampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D3DA24F07719856C88390791 /* Pods-SVGChooseSeatSampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SVGChooseSeatSampleTests.debug.xcconfig"; path = "Target Support Files/Pods-SVGChooseSeatSampleTests/Pods-SVGChooseSeatSampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D93C8415246AB74DBF3798BD /* Pods-SVGChooseSeatSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SVGChooseSeatSampleTests.release.xcconfig"; path = "Target Support Files/Pods-SVGChooseSeatSampleTests/Pods-SVGChooseSeatSampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		DE260D41680975EF74C1169F /* Pods_SVGChooseSeatSampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SVGChooseSeatSampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		4B654F9C2E3F0F51007FAD12 /* Model */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3C6C1EA52A9C89F8008621B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C6C1EE22A9C8A9C008621B6 /* SVGKit in Frameworks */,
+				3C6C1F272A9C90CC008621B6 /* LookinServer in Frameworks */,
+				3774A9772F5B5F70E061144C /* Pods_SVGChooseSeatSample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C6C1EC02A9C89F9008621B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4FFD9C73A8D02CE3B1251EC /* Pods_SVGChooseSeatSampleTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C6C1ECA2A9C89F9008621B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03D04932B7579BAE8C8BAB36 /* Pods_SVGChooseSeatSample_SVGChooseSeatSampleUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		290593A7878BDB77262CF7BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				326ADAC3483B3A5046BEA48B /* Pods-SVGChooseSeatSample.debug.xcconfig */,
+				486C7BD2BA4235761B27578F /* Pods-SVGChooseSeatSample.release.xcconfig */,
+				5AD6F57DD29F7F87AA28A4C4 /* Pods-SVGChooseSeatSample-SVGChooseSeatSampleUITests.debug.xcconfig */,
+				C90F4B734422BCC32DC3DC46 /* Pods-SVGChooseSeatSample-SVGChooseSeatSampleUITests.release.xcconfig */,
+				D3DA24F07719856C88390791 /* Pods-SVGChooseSeatSampleTests.debug.xcconfig */,
+				D93C8415246AB74DBF3798BD /* Pods-SVGChooseSeatSampleTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3C6C1E9F2A9C89F8008621B6 = {
+			isa = PBXGroup;
+			children = (
+				3C6C1EAA2A9C89F8008621B6 /* SVGChooseSeatSample */,
+				3C6C1EC62A9C89F9008621B6 /* SVGChooseSeatSampleTests */,
+				3C6C1ED02A9C89F9008621B6 /* SVGChooseSeatSampleUITests */,
+				3C6C1EA92A9C89F8008621B6 /* Products */,
+				290593A7878BDB77262CF7BE /* Pods */,
+				8EAE66B487D1AA6311A83731 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3C6C1EA92A9C89F8008621B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C6C1EA82A9C89F8008621B6 /* SVGChooseSeatSample.app */,
+				3C6C1EC32A9C89F9008621B6 /* SVGChooseSeatSampleTests.xctest */,
+				3C6C1ECD2A9C89F9008621B6 /* SVGChooseSeatSampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3C6C1EAA2A9C89F8008621B6 /* SVGChooseSeatSample */ = {
+			isa = PBXGroup;
+			children = (
+				3C8D2EEC2ADB6BDA007F6793 /* Extension */,
+				3CB9F8812A9F3D8B0003DFEB /* yuntu */,
+				3CB9F8802A9F3D790003DFEB /* svg */,
+				3C6C1EAB2A9C89F8008621B6 /* AppDelegate.h */,
+				3C6C1EAC2A9C89F8008621B6 /* AppDelegate.m */,
+				3C6C1EAE2A9C89F8008621B6 /* SceneDelegate.h */,
+				3C6C1EAF2A9C89F8008621B6 /* SceneDelegate.m */,
+				3C6C1EB42A9C89F8008621B6 /* Main.storyboard */,
+				3C6C1EB72A9C89F9008621B6 /* Assets.xcassets */,
+				3C6C1EB92A9C89F9008621B6 /* LaunchScreen.storyboard */,
+				3C6C1EBC2A9C89F9008621B6 /* Info.plist */,
+				3C6C1EBD2A9C89F9008621B6 /* main.m */,
+			);
+			path = SVGChooseSeatSample;
+			sourceTree = "<group>";
+		};
+		3C6C1EC62A9C89F9008621B6 /* SVGChooseSeatSampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				3C6C1EC72A9C89F9008621B6 /* SVGChooseSeatSampleTests.m */,
+			);
+			path = SVGChooseSeatSampleTests;
+			sourceTree = "<group>";
+		};
+		3C6C1ED02A9C89F9008621B6 /* SVGChooseSeatSampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3C6C1ED12A9C89F9008621B6 /* SVGChooseSeatSampleUITests.m */,
+				3C6C1ED32A9C89F9008621B6 /* SVGChooseSeatSampleUITestsLaunchTests.m */,
+			);
+			path = SVGChooseSeatSampleUITests;
+			sourceTree = "<group>";
+		};
+		3C8D2EEC2ADB6BDA007F6793 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3CE395AB2A9DC1E300B1FCAA /* NSBundle+SVGResources.h */,
+				3CE395AC2A9DC1E300B1FCAA /* NSBundle+SVGResources.m */,
+				3CDB2F2A2AD90E2400B5156C /* SVGKImage+ChangeStyle.h */,
+				3CDB2F2B2AD90E2400B5156C /* SVGKImage+ChangeStyle.m */,
+				3CDB2FFB2AD9171A00B5156C /* UIColor+KKHexString.h */,
+				3CDB2FFC2AD9171A00B5156C /* UIColor+KKHexString.m */,
+				3C8D2EED2ADB6C03007F6793 /* CALayer+Bitmap.h */,
+				3C8D2EEE2ADB6C03007F6793 /* CALayer+Bitmap.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		3CB9F8802A9F3D790003DFEB /* svg */ = {
+			isa = PBXGroup;
+			children = (
+				4B654F9C2E3F0F51007FAD12 /* Model */,
+				3CE395A92A9DC18800B1FCAA /* SVGResources.bundle */,
+				3CE6FC772AA024150003106C /* View */,
+				3CE6FC792AA024260003106C /* Controller */,
+			);
+			path = svg;
+			sourceTree = "<group>";
+		};
+		3CB9F8812A9F3D8B0003DFEB /* yuntu */ = {
+			isa = PBXGroup;
+			children = (
+				3CB9F8872A9F3DB60003DFEB /* Model */,
+				3CB9F8862A9F3DAD0003DFEB /* Data */,
+				3CB9F8852A9F3DA60003DFEB /* View */,
+				3CE6FC7A2AA024580003106C /* Controller */,
+			);
+			path = yuntu;
+			sourceTree = "<group>";
+		};
+		3CB9F8852A9F3DA60003DFEB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3CB9F8822A9F3DA00003DFEB /* KKYuntuChooseSeatView.h */,
+				3CB9F8832A9F3DA00003DFEB /* KKYuntuChooseSeatView.m */,
+				3CE6FC7E2AA0261C0003106C /* KKYuntuDrawSeatView.h */,
+				3CE6FC7F2AA0261C0003106C /* KKYuntuDrawSeatView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3CB9F8862A9F3DAD0003DFEB /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3CC350B02AA07812007B5693 /* yuntu_bg.jpg */,
+				3CB9F87C2A9F39B60003DFEB /* seat.json */,
+				3CB9F87E2A9F39C00003DFEB /* data.json */,
+				3CDB2F282AD8FFF700B5156C /* large_seat.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3CB9F8872A9F3DB60003DFEB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3CB9F8882A9F3DFE0003DFEB /* KKYuntuSeatAreaModel.h */,
+				3CB9F8892A9F3DFE0003DFEB /* KKYuntuSeatAreaModel.m */,
+				3CB9F88B2A9F3E1E0003DFEB /* KKYuntuSeatItemModel.h */,
+				3CB9F88C2A9F3E1E0003DFEB /* KKYuntuSeatItemModel.m */,
+				3CB9F8942A9F40B60003DFEB /* KKYuntuSeatGraphGeometry.h */,
+				3CB9F8912A9F402B0003DFEB /* KKYuntuSeatAreaDetalModel.h */,
+				3CB9F8922A9F402B0003DFEB /* KKYuntuSeatAreaDetalModel.m */,
+				3CB9F88E2A9F3EEC0003DFEB /* KKYuntuSeatDataManager.h */,
+				3CB9F88F2A9F3EEC0003DFEB /* KKYuntuSeatDataManager.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3CE6FC772AA024150003106C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3C6C1EE32A9C8AB8008621B6 /* KKSVGChooseSeatView.h */,
+				3C6C1EE42A9C8AB8008621B6 /* KKSVGChooseSeatView.m */,
+				3C6C1EE62A9C8C56008621B6 /* KKSVGDrawSeatView.h */,
+				3C6C1EE72A9C8C56008621B6 /* KKSVGDrawSeatView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3CE6FC792AA024260003106C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3C6C1EB12A9C89F8008621B6 /* KKSVGViewController.h */,
+				3C6C1EB22A9C89F8008621B6 /* KKSVGViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3CE6FC7A2AA024580003106C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3CE6FC7B2AA0246A0003106C /* KKYuntuViewController.h */,
+				3CE6FC7C2AA0246A0003106C /* KKYuntuViewController.m */,
+				3CC350B22AA07950007B5693 /* KKYuntuSeatAreaRainbowGenerator.h */,
+				3CC350B32AA07950007B5693 /* KKYuntuSeatAreaRainbowGenerator.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8EAE66B487D1AA6311A83731 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7FB8E6834B09BE024F230749 /* Pods_SVGChooseSeatSample.framework */,
+				05810F4507170A2204E6F7CE /* Pods_SVGChooseSeatSample_SVGChooseSeatSampleUITests.framework */,
+				DE260D41680975EF74C1169F /* Pods_SVGChooseSeatSampleTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3C6C1EA72A9C89F8008621B6 /* SVGChooseSeatSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C6C1ED72A9C89F9008621B6 /* Build configuration list for PBXNativeTarget "SVGChooseSeatSample" */;
+			buildPhases = (
+				E33BA637065CF24A7D6CACC0 /* [CP] Check Pods Manifest.lock */,
+				3C6C1EA42A9C89F8008621B6 /* Sources */,
+				3C6C1EA52A9C89F8008621B6 /* Frameworks */,
+				3C6C1EA62A9C89F8008621B6 /* Resources */,
+				5733711AEF70E898A627C379 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				4B654F9C2E3F0F51007FAD12 /* Model */,
+			);
+			name = SVGChooseSeatSample;
+			packageProductDependencies = (
+				3C6C1EE12A9C8A9C008621B6 /* SVGKit */,
+				3C6C1F262A9C90CC008621B6 /* LookinServer */,
+			);
+			productName = SVGChooseSeatSample;
+			productReference = 3C6C1EA82A9C89F8008621B6 /* SVGChooseSeatSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3C6C1EC22A9C89F9008621B6 /* SVGChooseSeatSampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C6C1EDA2A9C89F9008621B6 /* Build configuration list for PBXNativeTarget "SVGChooseSeatSampleTests" */;
+			buildPhases = (
+				3A1D81BFB8708D8D73630B98 /* [CP] Check Pods Manifest.lock */,
+				3C6C1EBF2A9C89F9008621B6 /* Sources */,
+				3C6C1EC02A9C89F9008621B6 /* Frameworks */,
+				3C6C1EC12A9C89F9008621B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3C6C1EC52A9C89F9008621B6 /* PBXTargetDependency */,
+			);
+			name = SVGChooseSeatSampleTests;
+			productName = SVGChooseSeatSampleTests;
+			productReference = 3C6C1EC32A9C89F9008621B6 /* SVGChooseSeatSampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3C6C1ECC2A9C89F9008621B6 /* SVGChooseSeatSampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C6C1EDD2A9C89F9008621B6 /* Build configuration list for PBXNativeTarget "SVGChooseSeatSampleUITests" */;
+			buildPhases = (
+				DEF8FD65784200F5E8533290 /* [CP] Check Pods Manifest.lock */,
+				3C6C1EC92A9C89F9008621B6 /* Sources */,
+				3C6C1ECA2A9C89F9008621B6 /* Frameworks */,
+				3C6C1ECB2A9C89F9008621B6 /* Resources */,
+				490A8813FA4D272AB8F87578 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3C6C1ECF2A9C89F9008621B6 /* PBXTargetDependency */,
+			);
+			name = SVGChooseSeatSampleUITests;
+			productName = SVGChooseSeatSampleUITests;
+			productReference = 3C6C1ECD2A9C89F9008621B6 /* SVGChooseSeatSampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3C6C1EA02A9C89F8008621B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					3C6C1EA72A9C89F8008621B6 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					3C6C1EC22A9C89F9008621B6 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 3C6C1EA72A9C89F8008621B6;
+					};
+					3C6C1ECC2A9C89F9008621B6 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 3C6C1EA72A9C89F8008621B6;
+					};
+				};
+			};
+			buildConfigurationList = 3C6C1EA32A9C89F8008621B6 /* Build configuration list for PBXProject "SVGChooseSeatSample" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3C6C1E9F2A9C89F8008621B6;
+			packageReferences = (
+				3C6C1EE02A9C8A9C008621B6 /* XCRemoteSwiftPackageReference "SVGKit" */,
+				3C6C1F252A9C90CC008621B6 /* XCRemoteSwiftPackageReference "LookinServer" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 3C6C1EA92A9C89F8008621B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3C6C1EA72A9C89F8008621B6 /* SVGChooseSeatSample */,
+				3C6C1EC22A9C89F9008621B6 /* SVGChooseSeatSampleTests */,
+				3C6C1ECC2A9C89F9008621B6 /* SVGChooseSeatSampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3C6C1EA62A9C89F8008621B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CB9F87D2A9F39B60003DFEB /* seat.json in Resources */,
+				3CB9F87F2A9F39C00003DFEB /* data.json in Resources */,
+				3C6C1EBB2A9C89F9008621B6 /* LaunchScreen.storyboard in Resources */,
+				3C6C1EB82A9C89F9008621B6 /* Assets.xcassets in Resources */,
+				3CE395AA2A9DC18800B1FCAA /* SVGResources.bundle in Resources */,
+				3CC350B12AA07812007B5693 /* yuntu_bg.jpg in Resources */,
+				3CDB2F292AD8FFF700B5156C /* large_seat.json in Resources */,
+				3C6C1EB62A9C89F8008621B6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C6C1EC12A9C89F9008621B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C6C1ECB2A9C89F9008621B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A1D81BFB8708D8D73630B98 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SVGChooseSeatSampleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		490A8813FA4D272AB8F87578 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SVGChooseSeatSample-SVGChooseSeatSampleUITests/Pods-SVGChooseSeatSample-SVGChooseSeatSampleUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SVGChooseSeatSample-SVGChooseSeatSampleUITests/Pods-SVGChooseSeatSample-SVGChooseSeatSampleUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SVGChooseSeatSample-SVGChooseSeatSampleUITests/Pods-SVGChooseSeatSample-SVGChooseSeatSampleUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5733711AEF70E898A627C379 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SVGChooseSeatSample/Pods-SVGChooseSeatSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SVGChooseSeatSample/Pods-SVGChooseSeatSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SVGChooseSeatSample/Pods-SVGChooseSeatSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEF8FD65784200F5E8533290 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SVGChooseSeatSample-SVGChooseSeatSampleUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E33BA637065CF24A7D6CACC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SVGChooseSeatSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C6C1EA42A9C89F8008621B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C6C1EB32A9C89F8008621B6 /* KKSVGViewController.m in Sources */,
+				3CC350B42AA07950007B5693 /* KKYuntuSeatAreaRainbowGenerator.m in Sources */,
+				3CDB2F2C2AD90E2400B5156C /* SVGKImage+ChangeStyle.m in Sources */,
+				3CDB2FFD2AD9171A00B5156C /* UIColor+KKHexString.m in Sources */,
+				3C6C1EE52A9C8AB8008621B6 /* KKSVGChooseSeatView.m in Sources */,
+				3CB9F8932A9F402B0003DFEB /* KKYuntuSeatAreaDetalModel.m in Sources */,
+				3C6C1EAD2A9C89F8008621B6 /* AppDelegate.m in Sources */,
+				3CB9F8902A9F3EEC0003DFEB /* KKYuntuSeatDataManager.m in Sources */,
+				3CE6FC7D2AA0246A0003106C /* KKYuntuViewController.m in Sources */,
+				3CB9F88D2A9F3E1E0003DFEB /* KKYuntuSeatItemModel.m in Sources */,
+				3CE6FC802AA0261C0003106C /* KKYuntuDrawSeatView.m in Sources */,
+				3C6C1EE82A9C8C56008621B6 /* KKSVGDrawSeatView.m in Sources */,
+				3CE395AD2A9DC1E300B1FCAA /* NSBundle+SVGResources.m in Sources */,
+				3C6C1EBE2A9C89F9008621B6 /* main.m in Sources */,
+				3CB9F88A2A9F3DFE0003DFEB /* KKYuntuSeatAreaModel.m in Sources */,
+				3CB9F8842A9F3DA00003DFEB /* KKYuntuChooseSeatView.m in Sources */,
+				3C8D2EEF2ADB6C03007F6793 /* CALayer+Bitmap.m in Sources */,
+				3C6C1EB02A9C89F8008621B6 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C6C1EBF2A9C89F9008621B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C6C1EC82A9C89F9008621B6 /* SVGChooseSeatSampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C6C1EC92A9C89F9008621B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C6C1ED22A9C89F9008621B6 /* SVGChooseSeatSampleUITests.m in Sources */,
+				3C6C1ED42A9C89F9008621B6 /* SVGChooseSeatSampleUITestsLaunchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3C6C1EC52A9C89F9008621B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C6C1EA72A9C89F8008621B6 /* SVGChooseSeatSample */;
+			targetProxy = 3C6C1EC42A9C89F9008621B6 /* PBXContainerItemProxy */;
+		};
+		3C6C1ECF2A9C89F9008621B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C6C1EA72A9C89F8008621B6 /* SVGChooseSeatSample */;
+			targetProxy = 3C6C1ECE2A9C89F9008621B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3C6C1EB42A9C89F8008621B6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C6C1EB52A9C89F8008621B6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3C6C1EB92A9C89F9008621B6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C6C1EBA2A9C89F9008621B6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3C6C1ED52A9C89F9008621B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3C6C1ED62A9C89F9008621B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3C6C1ED82A9C89F9008621B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 326ADAC3483B3A5046BEA48B /* Pods-SVGChooseSeatSample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEPLOYMENT_POSTPROCESSING = NO;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 492U995837;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SVGChooseSeatSample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taihe.SVGChooseSeatSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.taihe.*";
+				STRIP_STYLE = all;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3C6C1ED92A9C89F9008621B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 486C7BD2BA4235761B27578F /* Pods-SVGChooseSeatSample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEPLOYMENT_POSTPROCESSING = NO;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 492U995837;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SVGChooseSeatSample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taihe.SVGChooseSeatSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AdHoc com.taihe.*";
+				STRIP_STYLE = all;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		3C6C1EDB2A9C89F9008621B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3DA24F07719856C88390791 /* Pods-SVGChooseSeatSampleTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taihe.SVGChooseSeatSampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SVGChooseSeatSample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SVGChooseSeatSample";
+			};
+			name = Debug;
+		};
+		3C6C1EDC2A9C89F9008621B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D93C8415246AB74DBF3798BD /* Pods-SVGChooseSeatSampleTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taihe.SVGChooseSeatSampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SVGChooseSeatSample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SVGChooseSeatSample";
+			};
+			name = Release;
+		};
+		3C6C1EDE2A9C89F9008621B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AD6F57DD29F7F87AA28A4C4 /* Pods-SVGChooseSeatSample-SVGChooseSeatSampleUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taihe.SVGChooseSeatSampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = SVGChooseSeatSample;
+			};
+			name = Debug;
+		};
+		3C6C1EDF2A9C89F9008621B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C90F4B734422BCC32DC3DC46 /* Pods-SVGChooseSeatSample-SVGChooseSeatSampleUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taihe.SVGChooseSeatSampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = SVGChooseSeatSample;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3C6C1EA32A9C89F8008621B6 /* Build configuration list for PBXProject "SVGChooseSeatSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C6C1ED52A9C89F9008621B6 /* Debug */,
+				3C6C1ED62A9C89F9008621B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C6C1ED72A9C89F9008621B6 /* Build configuration list for PBXNativeTarget "SVGChooseSeatSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C6C1ED82A9C89F9008621B6 /* Debug */,
+				3C6C1ED92A9C89F9008621B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C6C1EDA2A9C89F9008621B6 /* Build configuration list for PBXNativeTarget "SVGChooseSeatSampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C6C1EDB2A9C89F9008621B6 /* Debug */,
+				3C6C1EDC2A9C89F9008621B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C6C1EDD2A9C89F9008621B6 /* Build configuration list for PBXNativeTarget "SVGChooseSeatSampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C6C1EDE2A9C89F9008621B6 /* Debug */,
+				3C6C1EDF2A9C89F9008621B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3C6C1EE02A9C8A9C008621B6 /* XCRemoteSwiftPackageReference "SVGKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVGKit/SVGKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		3C6C1F252A9C90CC008621B6 /* XCRemoteSwiftPackageReference "LookinServer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/QMUI/LookinServer";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3C6C1EE12A9C8A9C008621B6 /* SVGKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C6C1EE02A9C8A9C008621B6 /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKit;
+		};
+		3C6C1F262A9C90CC008621B6 /* LookinServer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C6C1F252A9C90CC008621B6 /* XCRemoteSwiftPackageReference "LookinServer" */;
+			productName = LookinServer;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 3C6C1EA02A9C89F8008621B6 /* Project object */;
+}
