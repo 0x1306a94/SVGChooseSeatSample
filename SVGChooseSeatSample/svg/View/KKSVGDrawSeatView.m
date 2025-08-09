@@ -73,7 +73,7 @@
     CGSize gapSize = CGSizeMake(2, 2);
 
     NSInteger row = 100;
-    NSInteger column = 100;
+    NSInteger column = 1000;
     for (NSInteger r = 0; r < row; r++) {
         CGFloat y = yOffset + (r * gridSize.height) + (r * gapSize.height);
         for (NSInteger c = 0; c < column; c++) {
@@ -109,7 +109,7 @@
 }
 
 // 假设 a3 是一个包含 `location` 属性的座位模型对象
-// 假设 _seatWidth 是 TCSDrawSeatView 的一个实例变量
+// 假设 _seatWidth 是 DrawSeatView 的一个实例变量
 - (CGRect)rectForSeat:(KKSeatItem *)seatModel {
 
     // 获取实例变量 _seatWidth
@@ -134,7 +134,7 @@
 
     // 获取座位的样式
     // v12 是 self->_seatStyle
-    //    TCSDrawSeatStyle seatStyle = [self seatStyle];
+    //    DrawSeatStyle seatStyle = [self seatStyle];
     NSInteger seatStyle = 3;
     CGFloat rectX, rectY;
 
